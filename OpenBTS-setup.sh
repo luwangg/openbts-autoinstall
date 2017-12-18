@@ -31,6 +31,7 @@ git pull
 # Configure OpenBTS
 sudo mkdir /etc/OpenBTS
 sudo sqlite3 -init $basedir/openbts/apps/OpenBTS.example.sql /etc/OpenBTS/OpenBTS.db ".quit"
+sudo usermod -G syslog openbts
 cd $basedir/openbts/apps
 ln -s $basedir/openbts/Transceiver52M/transceiver .
 
