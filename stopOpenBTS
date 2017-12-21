@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo systemctl stop asterisk.service
+sudo systemctl stop sipauthserve.service
+sudo systemctl stop smqueue.service
+sudo systemctl stop openbts.service
