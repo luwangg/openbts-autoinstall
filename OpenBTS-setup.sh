@@ -19,7 +19,7 @@ sudo apt install -y autoconf automake debhelper pkg-config libreadline-dev
 sudo apt install -y sqlite3 libsqlite3-dev libusb-1.0-0 libusb-1.0-0-dev
 sudo apt install -y libortp-dev libortp9 libosip2-dev libtool apt-utils git wget
 sudo apt install -y libvolk1-bin libvolk1-dev libncurses5 libncurses5-dev
-#volk_profile
+volk_profile
 
 # libsqliteodbc deps
 sudo apt install -y cdbs libsqlite0-dev
@@ -36,27 +36,30 @@ sudo uhd_images_downloader
 sudo apt install -y ntp ntpdate bind9
 
 # fetching sources & building process
-#basedir=~/sdr/dev
-#git clone https://github.com/RangeNetworks/dev.git $basedir
-#cd $basedir
-#./clone.sh
-#git pull
-#./pull.sh
-#sudo ./build.sh B210
+basedir=~/sdr/dev
+git clone https://github.com/RangeNetworks/dev.git $basedir
+cd $basedir
+./clone.sh
+git pull
+./pull.sh
+sudo ./build.sh B210
 # Deb Packages are built in a timestamped folder
-#cd $basedir/BUILDS/*--*
-#sudo dpkg -i libcoredumper*.deb
+cd $basedir/BUILDS/*--*
+sudo dpkg -i libcoredumper*.deb
 sudo apt install -f
-#sudo dpkg -i liba53*.deb
+sudo dpkg -i liba53*.deb
 sudo apt install -f
-#sudo dpkg -i range-configs*.deb
+
+# TODO : check if /etc/bind/named.conf.options and /etc/default/bind9 deserves to be edited by the script
+sudo dpkg -i range-configs*.deb
 sudo apt install -f
-#sudo dpkg -i range-asterisk*.deb
+# TODO : check if /etc/odbcinst.ini deserves to be edited by the script
+sudo dpkg -i range-asterisk*.deb
 sudo apt install -f
-#sudo dpkg -i sipauthserve*.deb
+sudo dpkg -i sipauthserve*.deb
 sudo apt install -f
-#sudo dpkg -i smqueue*.deb
+sudo dpkg -i smqueue*.deb
 sudo apt install -f
-#sudo dpkg -i openbts*.deb
+sudo dpkg -i openbts*.deb
 sudo apt install -f
 sudo apt autoremove

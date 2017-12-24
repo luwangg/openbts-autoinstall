@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo systemctl start asterisk.service
-sudo systemctl start sipauthserve.service
-sudo systemctl start smqueue.service
-sudo systemctl start openbts.service
+#sudo /OpenBTS/asterisk.service
+sudo /OpenBTS/sipauthserve&
+sudo /OpenBTS/smqueue &
+sudo /OpenBTS/OpenBTS&
